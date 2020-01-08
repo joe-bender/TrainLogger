@@ -1,10 +1,9 @@
 class Logger:
-    def __init__(dir, filename):
-        self.dir = dir
-        self.filename = filename
+    def __init__(self, filename):
+        self.f = open(filename, 'w')
     
     def log(self, loss):
-        pass
+        self.f.write(str(loss) + '\n')
 
     def close(self):
-        pass
+        self.f.close()
